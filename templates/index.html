@@ -1,21 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>Shopping Assistant</title>
+
 </head>
 
 <body>
 
     <h1>🛒 Shopping Assistant</h1>
 
-    <p>Tell me what product you are looking for.</p>
+    <p>
+        Tell me what product you are looking for.
+    </p>
+
+    {% if error %}
+
+        <p style="color:red;">
+            {{ error }}
+        </p>
+
+    {% endif %}
 
     <form action="/search" method="POST">
 
         <input
             type="text"
             name="query"
-            placeholder="Example: Phone under ₹30000 with good camera"
+            placeholder="Example: phone under 30000"
             required
         >
 
@@ -26,4 +44,5 @@
     </form>
 
 </body>
+
 </html>
