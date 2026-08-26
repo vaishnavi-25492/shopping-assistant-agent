@@ -16,6 +16,14 @@
     "battery": "5500mAh"
   },
   {
+    "name": "Redmi Note 14",
+    "category": "phone",
+    "price": 18999,
+    "rating": 4.3,
+    "camera": "108MP",
+    "battery": "5500mAh"
+  },
+  {
     "name": "HP Pavilion",
     "category": "laptop",
     "price": 64999,
@@ -28,6 +36,14 @@
     "category": "laptop",
     "price": 57999,
     "rating": 4.2,
+    "ram": "16GB",
+    "storage": "512GB SSD"
+  },
+  {
+    "name": "ASUS VivoBook",
+    "category": "laptop",
+    "price": 69999,
+    "rating": 4.5,
     "ram": "16GB",
     "storage": "512GB SSD"
   }
