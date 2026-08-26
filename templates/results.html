@@ -1,7 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Shopping Assistant Results</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping Results</title>
+
 </head>
 
 <body>
@@ -10,71 +18,118 @@
 
     <h2>Your Request</h2>
 
-    <p>{{ query }}</p>
+    <p>
+        {{ query }}
+    </p>
 
     <hr>
 
     <h2>🤖 AI Recommendation</h2>
 
     <div>
-        <pre>{{ recommendation }}</pre>
+
+        <pre style="
+            white-space: pre-wrap;
+            font-family: Arial;
+        ">{{ recommendation }}</pre>
+
     </div>
 
     <hr>
 
-    <h2>Available Products</h2>
+    <h2>🛍️ Matching Products</h2>
 
-    {% for product in products %}
+    {% if products %}
 
-        <div>
+        {% for product in products %}
 
-            <h3>{{ product.name }}</h3>
+            <div style="
+                border: 1px solid #ccc;
+                padding: 15px;
+                margin: 15px 0;
+                max-width: 500px;
+            ">
 
-            <p>
-                <strong>Price:</strong>
-                ₹{{ product.price }}
-            </p>
+                <h3>
+                    {{ product.name }}
+                </h3>
 
-            <p>
-                <strong>Rating:</strong>
-                ⭐ {{ product.rating }}
-            </p>
+                <p>
+                    <strong>Category:</strong>
+                    {{ product.category }}
+                </p>
 
-            {% if product.camera %}
-            <p>
-                <strong>Camera:</strong>
-                {{ product.camera }}
-            </p>
-            {% endif %}
+                <p>
+                    <strong>Price:</strong>
+                    ₹{{ product.price }}
+                </p>
 
-            {% if product.battery %}
-            <p>
-                <strong>Battery:</strong>
-                {{ product.battery }}
-            </p>
-            {% endif %}
+                <p>
+                    <strong>Rating:</strong>
+                    ⭐ {{ product.rating }}
+                </p>
 
-            {% if product.ram %}
-            <p>
-                <strong>RAM:</strong>
-                {{ product.ram }}
-            </p>
-            {% endif %}
+                {% if product.camera %}
 
-            {% if product.storage %}
-            <p>
-                <strong>Storage:</strong>
-                {{ product.storage }}
-            </p>
-            {% endif %}
+                    <p>
+                        <strong>Camera:</strong>
+                        {{ product.camera }}
+                    </p>
 
-            <hr>
+                {% endif %}
 
-        </div>
+                {% if product.battery %}
 
-    {% endfor %}
+                    <p>
+                        <strong>Battery:</strong>
+                        {{ product.battery }}
+                    </p>
 
-    <a href="/">← Search Again</a>
+                {% endif %}
+
+                {% if product.ram %}
+
+                    <p>
+                        <strong>RAM:</strong>
+                        {{ product.ram }}
+                    </p>
+
+                {% endif %}
+
+                {% if product.storage %}
+
+                    <p>
+                        <strong>Storage:</strong>
+                        {{ product.storage }}
+                    </p>
+
+                {% endif %}
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <h3>No matching products found ❌</h3>
+
+        <p>
+            Try something like:
+        </p>
+
+        <ul>
+            <li>phone under 30000</li>
+            <li>laptop under 70000</li>
+        </ul>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/">
+        ← Search Again
+    </a>
 
 </body>
+
 </html>
