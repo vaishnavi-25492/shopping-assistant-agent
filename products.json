@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Samsung Galaxy A56",
+    "category": "phone",
+    "price": 27999,
+    "rating": 4.4,
+    "camera": "50MP",
+    "battery": "5000mAh"
+  },
+  {
+    "name": "OnePlus Nord",
+    "category": "phone",
+    "price": 29999,
+    "rating": 4.5,
+    "camera": "50MP",
+    "battery": "5500mAh"
+  },
+  {
+    "name": "HP Pavilion",
+    "category": "laptop",
+    "price": 64999,
+    "rating": 4.3,
+    "ram": "16GB",
+    "storage": "512GB SSD"
+  },
+  {
+    "name": "Lenovo IdeaPad",
+    "category": "laptop",
+    "price": 57999,
+    "rating": 4.2,
+    "ram": "16GB",
+    "storage": "512GB SSD"
+  }
+]
