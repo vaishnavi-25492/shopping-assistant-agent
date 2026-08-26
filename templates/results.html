@@ -8,15 +8,55 @@
 
     <h1>🛒 Shopping Assistant</h1>
 
-    <h2>Your Requirement</h2>
-
+    <h2>Your Search</h2>
     <p>{{ query }}</p>
 
-    <h2>Results</h2>
+    <hr>
 
-    <p>Our AI agent will find the best products for you.</p>
+    {% if products %}
 
-    <a href="/">Search Again</a>
+        <h2>Recommended Products</h2>
+
+        {% for product in products %}
+
+            <div>
+                <h3>{{ product.name }}</h3>
+
+                <p><strong>Category:</strong> {{ product.category }}</p>
+                <p><strong>Price:</strong> ₹{{ product.price }}</p>
+                <p><strong>Rating:</strong> ⭐ {{ product.rating }}</p>
+
+                {% if product.camera %}
+                    <p><strong>Camera:</strong> {{ product.camera }}</p>
+                {% endif %}
+
+                {% if product.battery %}
+                    <p><strong>Battery:</strong> {{ product.battery }}</p>
+                {% endif %}
+
+                {% if product.ram %}
+                    <p><strong>RAM:</strong> {{ product.ram }}</p>
+                {% endif %}
+
+                {% if product.storage %}
+                    <p><strong>Storage:</strong> {{ product.storage }}</p>
+                {% endif %}
+
+                <hr>
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <h2>No products found ❌</h2>
+        <p>Try searching for a phone or laptop.</p>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/">← Search Again</a>
 
 </body>
 </html>
